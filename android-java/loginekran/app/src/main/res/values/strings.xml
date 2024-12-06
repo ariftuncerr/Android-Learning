@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">loginekranı</string>
+    <string name="entry">Merhaba</string>
+    <string name="userPlaceHolder">Kullanici adi</string>
+    <string name="userPasswordHolder">Şifreniz</string>
+    <string name="LoginButton">Giriş Yapın</string>
+</resources>

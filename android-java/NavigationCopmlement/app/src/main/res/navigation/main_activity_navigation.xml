@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.navigationcopmlement.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/oyunEkraniGecis"
+            app:destination="@id/oyunEkraniFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sonucEkraniFragment"
+        android:name="com.example.navigationcopmlement.SonucEkraniFragment"
+        android:label="fragment_sonuc_ekrani"
+        tools:layout="@layout/fragment_sonuc_ekrani" />
+    <fragment
+        android:id="@+id/oyunEkraniFragment"
+        android:name="com.example.navigationcopmlement.OyunEkraniFragment"
+        android:label="fragment_oyun_ekrani"
+        tools:layout="@layout/fragment_oyun_ekrani" >
+        <action
+            android:id="@+id/sonucEkraniGecis"
+            app:destination="@id/sonucEkraniFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

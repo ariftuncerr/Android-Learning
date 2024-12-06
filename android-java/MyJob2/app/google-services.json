@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "525721065156",
+    "project_id": "myjob-ece83",
+    "storage_bucket": "myjob-ece83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525721065156:android:e3b340fef72a308b71db91",
+        "android_client_info": {
+          "package_name": "com.tnqr.myjob2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoAg5fEFKGO41_t4rYgxlLWxClBIKtzrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

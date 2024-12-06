@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/kullaniciEkraniGecis"
+    app:startDestination="@id/anaSayfaFragment">
+
+    <fragment
+        android:id="@+id/anaSayfaFragment"
+        android:name="com.example.sayfalararasigecis.AnaSayfaFragment"
+        android:label="fragment_ana_sayfa"
+        tools:layout="@layout/fragment_ana_sayfa" >
+        <action
+            android:id="@+id/kullaniciEkraniGecis"
+            app:destination="@id/kullaniciEkraniFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/kullaniciEkraniFragment"
+        android:name="com.example.sayfalararasigecis.KullaniciEkraniFragment"
+        android:label="fragment_kullanici_ekrani"
+        tools:layout="@layout/fragment_kullanici_ekrani" >
+        <argument
+            android:name="ad"
+            app:argType="string"
+            android:defaultValue="Arif" />
+        <argument
+            android:name="sifre"
+            app:argType="integer"
+            android:defaultValue="6161" />
+        <argument
+            android:name="nesne"
+            app:argType="com.example.sayfalararasigecis.Kisiler" />
+        <action
+            android:id="@+id/ekran3_gecis"
+            app:destination="@id/ekran_3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ekran_3Fragment"
+        android:name="com.example.sayfalararasigecis.Ekran_3Fragment"
+        android:label="fragment_ekran_3"
+        tools:layout="@layout/fragment_ekran_3" />
+</navigation>
