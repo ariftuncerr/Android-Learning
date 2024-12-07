@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String SERVER_IP = "192.168.15.205"; // Sunucunun IP adresi
+    private static final String SERVER_IP = "192.168.15.232"; // Sunucunun IP adresi
     private static final int SERVER_PORT = 8081;               // Sunucunun portu
 
     private static MainActivity instance;  // Singleton örneği
