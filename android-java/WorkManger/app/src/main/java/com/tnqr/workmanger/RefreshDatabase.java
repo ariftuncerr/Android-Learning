@@ -26,7 +26,7 @@ public class RefreshDatabase extends Worker {
     public Result doWork() {
         //girilen bir data değerini alır ve arka tarafta bu işlemi yapmaya olanak sağlar
         Data data = getInputData();
-        int num = data.getInt("mynum",0);
+        int num = data.getInt("myNum",0);
         refreshValue(num);
 
         return Result.success(); // dışarıdan bir veri alma durumunda başarılı olup olmadığı kontrolü yapılır.
@@ -35,6 +35,7 @@ public class RefreshDatabase extends Worker {
         SharedPreferences sharedPreferences =mycontext.getSharedPreferences("import android.content.SharedPreferences",Context.MODE_PRIVATE);
         int myNumber = sharedPreferences.getInt("number",0);
         myNumber = myNumber + num;
+        System.out.println(myNumber);
         sharedPreferences.edit().putInt("number",myNumber).apply();
     }
 }
