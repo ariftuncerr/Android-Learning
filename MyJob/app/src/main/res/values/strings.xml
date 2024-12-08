@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyJob</string>
+    <string name="web_client_id">953904386282-dfqfau7qv1id55tj8ss71ef6u7q1o8uv.apps.googleusercontent.com</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">open</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

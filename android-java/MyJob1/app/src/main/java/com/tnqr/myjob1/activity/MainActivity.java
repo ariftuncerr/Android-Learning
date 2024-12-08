@@ -1,19 +1,15 @@
-package com.tnqr.navdrawerapp;
+package com.tnqr.myjob1.activity;
 
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.tnqr.navdrawerapp.databinding.ActivityMainBinding;
+import com.tnqr.myjob1.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
+
     ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        setSupportActionBar(binding.toolbar);
-
 
     }
 }

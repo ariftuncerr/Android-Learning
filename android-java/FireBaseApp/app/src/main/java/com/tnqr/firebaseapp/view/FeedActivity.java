@@ -46,7 +46,9 @@ public class FeedActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        //giriş yapan geçerli kullanıcı alınır.
         auth = FirebaseAuth.getInstance();
+
         firebaseFirestore = FirebaseFirestore.getInstance();
         postArrayList = new ArrayList<>();
         getData();
