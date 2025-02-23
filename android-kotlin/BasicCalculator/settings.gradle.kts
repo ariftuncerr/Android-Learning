@@ -19,7 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "kotlin3"
-include(":app")
+rootProject.name = "BasicCalculator"
 include(":app")
  
