@@ -16,5 +16,13 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        var teacher1 = Teacher("math","Ali","ali@gmail.com","teacher")
+        println(teacher1)
+        teacher1.setUserName("Arif")
+        println(teacher1.getUserName())
+        println(teacher1.showInfos())
+
+
     }
+
 }
