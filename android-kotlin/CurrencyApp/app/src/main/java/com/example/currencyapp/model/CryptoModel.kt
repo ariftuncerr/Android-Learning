@@ -1,6 +1,8 @@
 package com.example.currencyapp.model
 
+import com.google.gson.annotations.SerializedName
+
 data class CryptoModel(
-    val currency: String,
-    val price: String
+    @SerializedName("currency") val currency: String,
+    @SerializedName("price") val price: String
 )

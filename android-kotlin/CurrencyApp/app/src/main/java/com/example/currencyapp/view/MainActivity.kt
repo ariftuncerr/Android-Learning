@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        loadData()
 
         //https://raw.githubusercontent.com/
        // atilsamancioglu/K21-JSONDataSet/master/crypto.json
@@ -61,7 +62,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<List<CryptoModel>>, t: Throwable) {
-                t.printStackTrace()
+               println("Veriyi alırken hata oluştu "+t.printStackTrace())
             }
 
         })

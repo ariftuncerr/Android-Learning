@@ -11,6 +11,4 @@ interface CryptoAPI {
 
     @GET("atilsamancioglu/K21-JSONDataSet/master/crypto.json")
     fun getData() : Call<List<CryptoModel>>
-
-
 }

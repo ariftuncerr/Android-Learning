@@ -51,5 +51,8 @@ dependencies {
     implementation(libs.rxjava)
     implementation(libs.rxandroid)
     implementation(libs.adapter.rxjava2)
+    implementation(libs.androidx.recyclerview)
+    // For control over item selection of both touch and mouse driven selection
+    implementation(libs.androidx.recyclerview.selection)
 
 }
