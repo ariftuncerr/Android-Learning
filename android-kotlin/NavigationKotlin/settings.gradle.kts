@@ -19,9 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "kotlin3"
-include(":app")
-include(":app")
-include(":app")
+rootProject.name = "NavigationKotlin"
 include(":app")
  
