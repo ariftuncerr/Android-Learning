@@ -11,7 +11,7 @@ object CityClient {
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(CityAPI ::class.java)
+            .create(CityAPI::class.java)
     }
 
 }
