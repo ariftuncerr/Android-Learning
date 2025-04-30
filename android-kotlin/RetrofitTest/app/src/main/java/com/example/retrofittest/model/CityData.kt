@@ -4,12 +4,10 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import java.io.Serializable
 
-@Parcelize
 data class CityData(
     val city: String,
     val locations: List<LocationItem>
-) : Parcelable
-@Parcelize
+) : Serializable
 data class CityResponse(
     val currentPage: Int,
     val totalPage: Int,
@@ -17,5 +15,5 @@ data class CityResponse(
     val itemPerPage: Int,
     val pageSize: Int,
     val data: List<CityData>
-) : Parcelable
+) : Serializable
 

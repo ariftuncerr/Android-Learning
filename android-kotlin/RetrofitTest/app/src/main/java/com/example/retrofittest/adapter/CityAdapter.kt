@@ -3,32 +3,56 @@ package com.example.retrofittest.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.retrofittest.R
+import com.example.retrofittest.databinding.ItemCityRowBinding
 import com.example.retrofittest.model.CityData
-import com.example.retrofittest.model.CityResponse
-import org.w3c.dom.Text
 
-class CityAdapter(private val cityData: List<CityData>):
-    RecyclerView.Adapter<CityAdapter.CityViewHolder>() {
-    class CityViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val cityText : TextView = itemView.findViewById(R.id.cityNameText)
+class CityAdapter(private var cityList: List<CityData>) : RecyclerView.Adapter<CityAdapter.CityViewHolder>() {
 
-    }
+    private val expandedCityRows = mutableSetOf<Int>()
 
+    inner class CityViewHolder(val binding: ItemCityRowBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_city_row,parent,false)
-        return CityViewHolder(view)
+        val binding = ItemCityRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return CityViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return cityData.size
-    }
+    override fun getItemCount(): Int = cityList.size
 
     override fun onBindViewHolder(holder: CityViewHolder, position: Int) {
-        holder.cityText.text = cityData[position].toString()
+        val currentCity = cityList[position]
+        val isExpanded = expandedCityRows.contains(position)
+
+        holder.binding.cityNameText.text = currentCity.city
+        holder.binding.btnExpand.setImageResource(
+            if (isExpanded) R.drawable.narrow_24 else R.drawable.expand_24
+        )
+
+        holder.binding.btnExpand.setOnClickListener {
+            if (isExpanded) {
+                expandedCityRows.remove(position)
+            } else {
+                expandedCityRows.add(position)
+            }
+            notifyItemChanged(position)
+        }
+
+        if (isExpanded) {
+            holder.binding.locationRecyclerView.visibility = View.VISIBLE
+            holder.binding.locationRecyclerView.layoutManager = LinearLayoutManager(holder.itemView.context)
+            holder.binding.locationRecyclerView.adapter = LocationAdapter(currentCity.locations)
+        } else {
+            holder.binding.locationRecyclerView.visibility = View.INVISIBLE
+        }
+
+        holder.binding.locationRecyclerView.isNestedScrollingEnabled = false
+    }
+
+    fun updateList(newList: List<CityData>) {
+        cityList = newList
+        notifyDataSetChanged()
     }
 }

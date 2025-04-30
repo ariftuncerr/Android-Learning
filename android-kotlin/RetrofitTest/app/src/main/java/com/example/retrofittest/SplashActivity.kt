@@ -29,14 +29,14 @@ class SplashActivity : AppCompatActivity() {
         cityViewModel.cityResponse.observe(this) { response ->
             if (response != null) {
                 val intent = Intent(this, MainActivity::class.java)
-                intent.putParcelableArrayListExtra("city_list", ArrayList(response.data)) // Listeyi doğrudan gönder
+                intent.putExtra("city_response",response) // Listeyi doğrudan gönder
                 startActivity(intent)
                 finish()
             }
             cityViewModel.isError.observe(this){ error->
-                if (error){
+                if (error)
                     Toast.makeText(this,"Veri alınırken Hata Oluştu, İnternet bağlantınızı kontrol edin",Toast.LENGTH_SHORT).show()
-                }
+
             }
         }
     }

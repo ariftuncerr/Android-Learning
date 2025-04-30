@@ -8,36 +8,36 @@ import com.example.retrofittest.model.CityResponse
 import com.example.retrofittest.repository.CityRepository
 import kotlinx.coroutines.launch
 
-class CityViewModel : ViewModel(){
+class CityViewModel : ViewModel() {
     private val repository = CityRepository()
 
-    //verilen tutulacağı mutableLiveData nesnesi
     val cityResponse = MutableLiveData<CityResponse?>()
     val isError = MutableLiveData<Boolean>()
 
-
-    //verilerin sayfa sayfa yakalanacağı bölüm
-    fun fetchCities(page : Int){
-        viewModelScope.launch{
+    fun fetchCities(page: Int) {
+        viewModelScope.launch {
             try {
                 val response = repository.getCities(page)
-                if (response.isSuccessful && response.body() != null){
-                    val data = response.body()
-                    Log.e("API RESPONSE","Gelen Şehir Sayısı: ${data?.data?.size}")
-                    cityResponse.postValue(data)
+                if (response.isSuccessful && response.body() != null) {
+                    val newData = response.body()
+                    Log.e("API RESPONSE", "Sayfa $page - Gelen Şehir Sayısı: ${newData?.data?.size}")
+
+                    val currentData = cityResponse.value?.data ?: emptyList()
+                    val updatedData = newData?.data ?: emptyList()
+                    val combinedList = currentData + updatedData
+
+                    val mergedResponse = newData?.copy(data = combinedList)
+                    cityResponse.postValue(mergedResponse)
+
                     isError.postValue(false)
-                }
-                else{
-                    Log.e("API_ERROR","Başarısız response: ${response.code()}")
+                } else {
+                    Log.e("API_ERROR", "Başarısız response: ${response.code()}")
                     isError.postValue(true)
                 }
-            }
-            catch (_: Exception){
-                Log.e("API_ERROR","Hata")
+            } catch (e: Exception) {
+                Log.e("API_ERROR", "Hata: ${e.message}")
                 isError.postValue(true)
             }
-
-
         }
     }
 }
