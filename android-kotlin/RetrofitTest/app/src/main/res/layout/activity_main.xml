@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCities"
@@ -32,12 +32,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnFavorites"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="18dp"
         android:background="@color/white"
+        android:onClick="onFavoritesClick"
         app:layout_constraintBottom_toTopOf="@+id/recyclerViewCities"
         app:layout_constraintStart_toEndOf="@+id/txtLocations"
         app:layout_constraintTop_toTopOf="parent"

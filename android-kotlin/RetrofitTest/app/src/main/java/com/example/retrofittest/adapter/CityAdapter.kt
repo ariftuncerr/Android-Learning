@@ -43,10 +43,12 @@ class CityAdapter(private var cityList: List<CityData>) : RecyclerView.Adapter<C
         if (isExpanded) {
             holder.binding.locationRecyclerView.visibility = View.VISIBLE
             holder.binding.locationRecyclerView.layoutManager = LinearLayoutManager(holder.itemView.context)
-            holder.binding.locationRecyclerView.adapter = LocationAdapter(currentCity.locations)
+            val context = holder.itemView.context
+            holder.binding.locationRecyclerView.adapter = LocationAdapter(context, currentCity.locations)
         } else {
             holder.binding.locationRecyclerView.visibility = View.INVISIBLE
         }
+
 
         holder.binding.locationRecyclerView.isNestedScrollingEnabled = false
     }

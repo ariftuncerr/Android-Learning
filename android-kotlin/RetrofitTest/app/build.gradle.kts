@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id ("kotlin-parcelize")
+    id("kotlin-kapt")
 }
 
 android {
@@ -67,5 +68,9 @@ dependencies {
     // viewModel
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
+
+    //Glide
+    implementation (libs.glide)
+    kapt(libs.compiler)
 
 }

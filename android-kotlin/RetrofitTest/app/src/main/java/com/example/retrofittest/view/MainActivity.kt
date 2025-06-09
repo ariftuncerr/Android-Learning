@@ -1,5 +1,6 @@
-package com.example.retrofittest
+package com.example.retrofittest.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -83,5 +84,12 @@ class MainActivity : AppCompatActivity() {
         allCities.clear()
         allCities.addAll(cityList)
         cityAdapter.updateList(allCities)
+    }
+   fun onFavoritesClick(view : View){
+
+        val allLocations = allCities.flatMap { it.locations }
+        val intent = Intent(this, FavoritesActivity::class.java)
+        intent.putExtra("all_locations", ArrayList(allLocations))
+        startActivity(intent)
     }
 }
