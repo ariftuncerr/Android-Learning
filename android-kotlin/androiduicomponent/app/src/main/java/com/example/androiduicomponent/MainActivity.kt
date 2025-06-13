@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.CompoundButton
+import android.widget.SeekBar
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -75,6 +76,47 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,"GS is not selected", Toast.LENGTH_SHORT).show()
 
         }
+
+
+
+        //progressBar
+        binding.progressBarSwitch.setOnCheckedChangeListener { _,isChecked ->
+            if (isChecked){
+                binding.progressBar.visibility = View.VISIBLE
+
+            }
+            else{
+                binding.progressBar.visibility = View.INVISIBLE
+            }
+        }
+
+        //seekBar
+        binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(
+                seekBar: SeekBar?,
+                progress: Int,
+                fromUser: Boolean
+            ) {
+                binding.seekkValueTxt.text = "Seek Point: $progress"
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                //kullaıcı dokunmaya başladığında
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                //kullanıcı bıraktığında
+            }
+
+        })
+
+
+        //rating Bar
+
+        binding.ratingBar.setOnRatingBarChangeListener{ratingBar,rating,fromUser->
+            binding.ratingValueTxt.text = "Rating Point ${rating*20}"
+        }
+
 
 
 
