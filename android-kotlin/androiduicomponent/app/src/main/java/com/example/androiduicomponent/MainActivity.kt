@@ -33,6 +33,10 @@ class MainActivity : AppCompatActivity() {
             else{
                 Log.e("Toggle Case","Switch is off")
             }
+
         }
+        val checkStatus = binding.switch1.isChecked
+
+
     }
 }
