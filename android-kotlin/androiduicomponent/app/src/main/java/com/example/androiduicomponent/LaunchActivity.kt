@@ -34,4 +34,8 @@ class LaunchActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
+    fun goToListAndGridAndSpinner (view : View){
+        val intent = Intent(this, ListAndGridViewActivity :: class.java)
+        startActivity(intent)
+    }
 }
