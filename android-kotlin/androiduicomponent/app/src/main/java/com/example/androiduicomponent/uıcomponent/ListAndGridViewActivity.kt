@@ -1,15 +1,13 @@
-package com.example.androiduicomponent
+package com.example.androiduicomponent.uıcomponent
 
+import android.R
 import android.os.Bundle
 import android.view.View
-import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.androiduicomponent.databinding.ActivityListAndGridViewBinding
 
 class ListAndGridViewActivity : AppCompatActivity() {
@@ -29,7 +27,7 @@ class ListAndGridViewActivity : AppCompatActivity() {
             "ABD"
         )
 
-        val listAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,android.R.id.text1,countryList)
+        val listAdapter = ArrayAdapter(this, R.layout.simple_list_item_1, R.id.text1, countryList)
 
         //spinner
         binding.listView.adapter = listAdapter
@@ -40,7 +38,8 @@ class ListAndGridViewActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                Toast.makeText(applicationContext,"Selected Item = ${countryList.get(position)}",Toast.LENGTH_SHORT)
+                Toast.makeText(applicationContext,"Selected Item = ${countryList.get(position)}",
+                    Toast.LENGTH_SHORT)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -58,7 +57,8 @@ class ListAndGridViewActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                Toast.makeText(applicationContext,"Selected Item = ${countryList.get(position)}",Toast.LENGTH_SHORT)
+                Toast.makeText(applicationContext,"Selected Item = ${countryList.get(position)}",
+                    Toast.LENGTH_SHORT)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {

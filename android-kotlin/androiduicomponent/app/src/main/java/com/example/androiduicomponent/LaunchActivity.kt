@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.androiduicomponent.databinding.ActivityLaunchBinding
 import com.example.androiduicomponent.uıcomponent.BasicComponentActivity
 import com.example.androiduicomponent.uıcomponent.DateAndTimePickerActivity
+import com.example.androiduicomponent.uıcomponent.ListAndGridViewActivity
 
 class LaunchActivity : AppCompatActivity() {
     private lateinit var binding : ActivityLaunchBinding
@@ -35,7 +36,7 @@ class LaunchActivity : AppCompatActivity() {
 
     }
     fun goToListAndGridAndSpinner (view : View){
-        val intent = Intent(this, ListAndGridViewActivity :: class.java)
+        val intent = Intent(this, ListAndGridViewActivity:: class.java)
         startActivity(intent)
     }
 }

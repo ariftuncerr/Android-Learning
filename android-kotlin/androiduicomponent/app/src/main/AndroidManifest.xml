@@ -21,14 +21,17 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".DateAndTimePickerActivity" >
+
+        <activity android:name=".uıcomponent.DateAndTimePickerActivity" >
         </activity>
-        <activity android:name=".ImageAndVideoViewActivity" >
+        <activity android:name=".uıcomponent.ListAndGridViewActivity" >
         </activity>
         <activity
-            android:name=".BasicComponentActivity"
+            android:name=".uıcomponent.ImageAndVideoViewActivity"
             android:exported="false">
 
+        </activity>
+        <activity android:name=".uıcomponent.BasicComponentActivity">
         </activity>
     </application>
 
