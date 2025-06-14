@@ -1,4 +1,4 @@
-package com.example.androiduicomponent
+package com.example.androiduicomponent.uıcomponent
 
 import android.os.Bundle
 import android.util.Log

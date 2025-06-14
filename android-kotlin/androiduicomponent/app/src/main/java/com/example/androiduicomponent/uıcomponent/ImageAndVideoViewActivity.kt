@@ -1,15 +1,13 @@
-package com.example.androiduicomponent
+package com.example.androiduicomponent.uıcomponent
 
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.View
 import android.widget.MediaController
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.androiduicomponent.R
 import com.example.androiduicomponent.databinding.ActivityImageAndVideoViewBinding
+
 class ImageAndVideoViewActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityImageAndVideoViewBinding

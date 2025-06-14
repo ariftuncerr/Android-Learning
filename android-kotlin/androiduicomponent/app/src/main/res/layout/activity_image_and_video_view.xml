@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ImageAndVideoViewActivity"
+    tools:context=".uıcomponent.ImageAndVideoViewActivity"
     tools:layout_editor_absoluteX="-5dp"
     tools:layout_editor_absoluteY="3dp">
 

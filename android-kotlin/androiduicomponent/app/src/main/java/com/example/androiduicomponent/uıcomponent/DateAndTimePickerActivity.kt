@@ -1,15 +1,11 @@
-package com.example.androiduicomponent
+package com.example.androiduicomponent.uıcomponent
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.view.View
-import android.widget.TimePicker
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.androiduicomponent.databinding.ActivityDateAndTimePickerBinding
 
 class DateAndTimePickerActivity : AppCompatActivity() {
@@ -28,9 +24,9 @@ class DateAndTimePickerActivity : AppCompatActivity() {
             val hour = calendar.get(Calendar.HOUR)
             val minute = calendar.get(Calendar.MINUTE)
 
-            val timePicker = TimePickerDialog(this, {_,hour,minute ->
+            val timePicker = TimePickerDialog(this, { _, hour, minute ->
                 binding.timeEditTxt.setText("$hour:$minute")
-            },hour,minute,true)
+            }, hour, minute, true)
 
             timePicker.setTitle("Saati Seçin")
             timePicker.show()
@@ -45,9 +41,9 @@ class DateAndTimePickerActivity : AppCompatActivity() {
             val month = calendar.get(Calendar.MONTH)
             val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-            val datePicker = DatePickerDialog(this,{_,selectedYear,selectedMonth,selectedDay->
-                binding.dateEditTxt.setText("$selectedDay.${selectedMonth+1}.$selectedYear")
-            },year,month,day)
+            val datePicker = DatePickerDialog(this, { _, selectedYear, selectedMonth, selectedDay ->
+                binding.dateEditTxt.setText("$selectedDay.${selectedMonth + 1}.$selectedYear")
+            }, year, month, day)
             datePicker.show()
         }
 

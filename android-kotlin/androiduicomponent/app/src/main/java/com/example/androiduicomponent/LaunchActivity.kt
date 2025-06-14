@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.androiduicomponent.databinding.ActivityLaunchBinding
+import com.example.androiduicomponent.uıcomponent.BasicComponentActivity
+import com.example.androiduicomponent.uıcomponent.DateAndTimePickerActivity
 
 class LaunchActivity : AppCompatActivity() {
     private lateinit var binding : ActivityLaunchBinding
@@ -20,15 +22,15 @@ class LaunchActivity : AppCompatActivity() {
 
     }
     fun goToDatePickerPage (view: View){
-        val intent = Intent(this, DateAndTimePickerActivity :: class.java)
+        val intent = Intent(this, DateAndTimePickerActivity:: class.java)
         startActivity(intent)
     }
     fun goToImageAndVideoPage (view : View) {
-        val intent = Intent(this, DateAndTimePickerActivity :: class.java)
+        val intent = Intent(this, DateAndTimePickerActivity:: class.java)
         startActivity(intent)
     }
     fun goToBasicComponentsPage (view: View){
-        val intent = Intent(this, BasicComponentActivity :: class.java)
+        val intent = Intent(this, BasicComponentActivity:: class.java)
         startActivity(intent)
 
     }
