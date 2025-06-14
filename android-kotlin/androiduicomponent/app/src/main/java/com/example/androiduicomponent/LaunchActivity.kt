@@ -32,7 +32,7 @@ class LaunchActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
-    fun goToListAndGridViewPage (view : View){
+    fun goToListAndGridAndSpinner (view : View){
         val intent = Intent(this, ListAndGridViewActivity :: class.java)
         startActivity(intent)
     }

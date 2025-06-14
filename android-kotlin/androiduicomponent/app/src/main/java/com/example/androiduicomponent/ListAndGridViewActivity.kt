@@ -31,9 +31,8 @@ class ListAndGridViewActivity : AppCompatActivity() {
 
         val listAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,android.R.id.text1,countryList)
 
+        //spinner
         binding.listView.adapter = listAdapter
-        binding.gridView.adapter = listAdapter
-
         binding.listView.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -50,6 +49,8 @@ class ListAndGridViewActivity : AppCompatActivity() {
 
         }
 
+        //grid View
+        binding.gridView.adapter = listAdapter
         binding.gridView.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -66,6 +67,33 @@ class ListAndGridViewActivity : AppCompatActivity() {
 
 
         }
+
+        //spinner
+
+        binding.spinner.adapter = listAdapter
+
+        binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                Toast.makeText(applicationContext,"Selected Item is ${countryList[position]}",
+                    Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+
+        }
+        val selectedItem = countryList[binding.spinner.selectedItemPosition]
+
+        println("Selected Item"+selectedItem)
+
+
 
 
 
