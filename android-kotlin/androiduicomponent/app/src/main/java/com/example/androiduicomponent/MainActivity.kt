@@ -1,5 +1,6 @@
 package com.example.androiduicomponent
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -124,5 +125,12 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
+    }
+    fun goToPicker (view: View){
+        val intent = Intent(this, DateAndTimePickerActivity :: class.java)
+        startActivity(intent)
+        finish()
     }
 }
