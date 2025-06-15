@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.androiduicomponent.databinding.ActivityLaunchBinding
+import com.example.androiduicomponent.ux.UXActivity
 import com.example.androiduicomponent.uıcomponent.BasicComponentActivity
 import com.example.androiduicomponent.uıcomponent.DateAndTimePickerActivity
 import com.example.androiduicomponent.uıcomponent.ListAndGridViewActivity
@@ -37,6 +38,10 @@ class LaunchActivity : AppCompatActivity() {
     }
     fun goToListAndGridAndSpinner (view : View){
         val intent = Intent(this, ListAndGridViewActivity:: class.java)
+        startActivity(intent)
+    }
+    fun goToUXPage (view : View){
+        val intent = Intent(applicationContext, UXActivity :: class.java)
         startActivity(intent)
     }
 }

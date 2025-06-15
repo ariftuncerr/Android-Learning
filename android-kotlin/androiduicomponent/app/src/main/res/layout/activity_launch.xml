@@ -31,6 +31,17 @@
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
+        android:id="@+id/button5"
+        android:layout_width="174dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="72dp"
+        android:onClick="goToUXPage"
+        android:text="Ux Page"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
