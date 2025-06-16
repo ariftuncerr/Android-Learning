@@ -14,7 +14,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.md3.databinding.ActivityMainBinding
 import com.example.md3.databinding.ActivityMd3FirstBinding
 
 class MD3FirstActivity : AppCompatActivity(),SearchView.OnQueryTextListener {
