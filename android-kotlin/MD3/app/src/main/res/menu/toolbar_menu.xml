@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/search_action"
+        android:icon="@drawable/baseline_search_24"
+        android:title="Search"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@drawable/baseline_logout_24"
+        android:title="Logout"
+        app:showAsAction="always|withText" />
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="Profile"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="Settings"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/action_info"
+        android:icon="@drawable/baseline_info_24"
+        android:title="Info"
+        app:showAsAction="always" />
+</menu>
