@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.md3.tabLayout.TabLayoutActivity
 
 class LaunchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +26,10 @@ class LaunchActivity : AppCompatActivity() {
     }
     fun md3SecondBtnClick (view: View){
         val intent = Intent(applicationContext, MD3SecondActivity :: class.java)
+        startActivity(intent)
+    }
+    fun tabLayoutClick (view: View){
+        val intent = Intent(applicationContext, TabLayoutActivity :: class.java)
         startActivity(intent)
     }
 }
