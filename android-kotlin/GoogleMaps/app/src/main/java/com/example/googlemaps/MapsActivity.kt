@@ -1,5 +1,6 @@
 package com.example.googlemaps
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.location.Location
@@ -7,6 +8,7 @@ import android.location.LocationListener
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
@@ -150,5 +152,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMapLong
         mMap.addMarker(MarkerOptions().position(p0))
         selectedLatitude = p0.latitude
         selectedLongitude = p0.longitude
+    }
+
+    fun onSelectPlaceClick(view : View){
+        if (selectedLongitude != null || selectedLatitude != null){
+            val intent = Intent(this, MainActivity :: class.java).apply {
+                putExtra("lng",selectedLongitude)
+                putExtra("lat",selectedLatitude)
+            }
+            startActivity(intent)
+        }
+        else
+            Snackbar.make(binding.root,"You should Select one Place", Snackbar.LENGTH_SHORT).show()
+
+
     }
 }
