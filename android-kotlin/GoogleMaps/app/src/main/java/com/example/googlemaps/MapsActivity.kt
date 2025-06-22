@@ -22,9 +22,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.googlemaps.databinding.ActivityMapsBinding
 import com.google.android.material.snackbar.Snackbar
-import java.security.Permissions
-import java.security.acl.Permission
-import java.util.jar.Manifest
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMapLongClickListener {
 
@@ -41,6 +38,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMapLong
 
     private var selectedLongitude : Double? = null
     private var selectedLatitude : Double? = null
+
+    //intent from favorites
+    private var lat_fromFavorites = 0.0
+    private var lng_fromFavorites = 0.0
+    private var cameFromFavorites = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,15 +78,30 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMapLong
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 15f))
                 */
                 //çözüm -> konum ilk açıldığında bir seferliğe mahsus o konuma gitmek için kayıt tutarız
-                trackBoolean = sharedPreferences.getBoolean("trackBoolean",false)
-                if (trackBoolean == false){
-                    sharedPreferences.edit().putBoolean("trackBoolean",true).apply()
-                    val userLocation = LatLng(location.latitude,location.longitude)
-                    mMap.clear()
-                    mMap.addMarker(MarkerOptions().position(userLocation).title("Your Location"))
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,15f))
-                }
+                lat_fromFavorites = intent.getDoubleExtra("lat", 0.0)
+                lng_fromFavorites = intent.getDoubleExtra("lng", 0.0)
+                cameFromFavorites = intent.getBooleanExtra("cameFromFavorites", false)
 
+                trackBoolean = sharedPreferences.getBoolean("trackBoolean",false)
+                if (trackBoolean == false) {
+                    sharedPreferences.edit().putBoolean("trackBoolean", true).apply()
+
+                    mMap.clear()
+                    //favorites den gelindiyse
+                    if (cameFromFavorites){
+                        val placeLocation = LatLng(lat_fromFavorites,lng_fromFavorites)
+                        mMap.addMarker(MarkerOptions().position(placeLocation).title("Place Location"))
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(placeLocation, 15f))
+                    }
+
+                    //main den gelindiyse
+                    else{
+                        val userLocation = LatLng(location.latitude, location.longitude)
+                        mMap.addMarker(MarkerOptions().position(userLocation).title("Your Location"))
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 15f))
+                    }
+
+               }
 
             }
 
