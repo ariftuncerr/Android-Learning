@@ -11,6 +11,8 @@ class Note (
     @ColumnInfo(name = "note_title")
     val title : String,
     @ColumnInfo(name = "note_description")
-    val description : String
+    val description : String,
+    @ColumnInfo(name = "note_savedOnFirebase")
+    var isSavedOnFirebase: Boolean
 
 )
